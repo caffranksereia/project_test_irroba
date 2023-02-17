@@ -53,8 +53,9 @@ export class ProductController {
       const existingProduct = await this.productService.findOne(id);
       return response.status(HttpStatus.OK).json({
       message: 'Product found successfully',existingProduct,});
-    }catch(err){}
-    return response.status(err.status).json(err.response);
+    }catch(err){
+      return response.status(err.status).json(err.response);
+    }
   }
 
   @Delete(':id')
