@@ -19,7 +19,7 @@ export class ProductController {
     } catch(err){
       return response.status(HttpStatus.BAD_REQUEST).json({
         statusCode: 400,
-        message: 'Error: Student not created',
+        message: 'Error: Product not created',
       });
     }
   }
@@ -53,8 +53,9 @@ export class ProductController {
       const existingProduct = await this.productService.findOne(id);
       return response.status(HttpStatus.OK).json({
       message: 'Product found successfully',existingProduct,});
-    }catch(err){}
-    return response.status(err.status).json(err.response);
+    }catch(err){
+      return response.status(err.status).json(err.response);
+    }
   }
 
   @Delete(':id')

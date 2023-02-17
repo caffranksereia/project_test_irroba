@@ -1,4 +1,4 @@
-import { Controller } from '@nestjs/common';
+import { Controller, Get, Param } from '@nestjs/common';
 import { ProductExternoService } from './product-externo.service';
 
 @Controller('product-externo')
