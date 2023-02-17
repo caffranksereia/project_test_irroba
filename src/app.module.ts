@@ -4,16 +4,23 @@ import { AppService } from './app.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ProductModule } from './product/product.module';
 import { ConfigModule } from '@nestjs/config';
-import { ApiModule } from './api/api.module';
-
+import { HttpModule, HttpService } from '@nestjs/axios';
+import { UsersController } from './users/users.controller';
+import { UsersService } from './users/users.service';
+import { UsersModule } from './users/users.module';
+import { ProductExternoModule } from './product-externo/product-externo.module';
+import { ProductSchemas } from './schemas/product.schemas';
 @Module({
   imports: [
     MongooseModule.forRoot('mongodb://localhost:27017/product_db'),
+    MongooseModule.forFeature([{ name: 'Product', schema: ProductSchemas }]),
     ProductModule,
     ConfigModule.forRoot(),
-    ApiModule,
+    HttpModule,
+    UsersModule,
+    ProductExternoModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [AppController, UsersController],
+  providers: [AppService, UsersService],
 })
 export class AppModule {}
