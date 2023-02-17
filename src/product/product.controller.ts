@@ -19,7 +19,7 @@ export class ProductController {
     } catch(err){
       return response.status(HttpStatus.BAD_REQUEST).json({
         statusCode: 400,
-        message: 'Error: Student not created',
+        message: 'Error: Product not created',
       });
     }
   }
