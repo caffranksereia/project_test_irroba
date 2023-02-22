@@ -8,7 +8,6 @@ import { HttpModule } from "@nestjs/axios";
 import { UsersController } from "./users/users.controller";
 import { UsersService } from "./users/users.service";
 import { UsersModule } from "./users/users.module";
-import { ProductExternoModule } from "./product-externo/product-externo.module";
 import { Product, ProductSchemas } from "./schemas/product.schemas";
 @Module({
   imports: [
@@ -18,7 +17,6 @@ import { Product, ProductSchemas } from "./schemas/product.schemas";
     ConfigModule.forRoot(),
     HttpModule,
     UsersModule,
-    ProductExternoModule,
   ],
   controllers: [AppController, UsersController],
   providers: [AppService, UsersService],
