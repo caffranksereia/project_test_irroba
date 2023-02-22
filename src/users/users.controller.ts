@@ -1,12 +1,10 @@
 import {
-  Controller,
-  Body,
-  Post,
-  Req,
-  Get,
-  HttpStatus,
-  Res,
-  Headers
+ Controller,
+ Body,
+ Post,
+ Get,
+ HttpStatus,
+ Res,
 } from "@nestjs/common";
 import { response } from "express";
 import { UsersService } from "./users.service";
