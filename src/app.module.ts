@@ -9,11 +9,11 @@ import { UsersController } from "./users/users.controller";
 import { UsersService } from "./users/users.service";
 import { UsersModule } from "./users/users.module";
 import { ProductExternoModule } from "./product-externo/product-externo.module";
-import { ProductSchemas } from "./schemas/product.schemas";
+import { Product, ProductSchemas } from "./schemas/product.schemas";
 @Module({
   imports: [
     MongooseModule.forRoot("mongodb://localhost:27017/product_db"),
-    MongooseModule.forFeature([{ name: "Product", schema: ProductSchemas }]),
+    MongooseModule.forFeature([{ name: Product.name, schema: ProductSchemas }]),
     ProductModule,
     ConfigModule.forRoot(),
     HttpModule,
