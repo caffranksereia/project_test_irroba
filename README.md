@@ -6,16 +6,24 @@
 
 A seguir as informacoes do projeto:
   - Pasta /product e a pasta dos crud no mongodb:
-    C: create 
-    R: - findAll retorna tudo , - findOne: tem o param id
+    C: create - informe o body:
+      ## /product - POST
+    R: - findAll retorna tudo:
+      ## /product - GET
+     - findOne: tem o param id
+      ## /product/{:id} - GET
     U: - update param id o body para atualizar
+      ## {/product/:id, PUT}
     D: delete param id
+      ## {/product/:id, DELETE}
 
   - Pasta /user e authetication do usuario da api do Irroba
-  - Pasta /productExterno e da api do Irroba recebe so o id 
+      ## {/users, POST}
 
-
-
+  - Para pegar o producto na api precisa desse endpoint:
+      ## {/users/:id, GET}
+ Para rodar o o projeto precisa ir no bash e escrever :
+  ## npm run dev
 
 
 ## Installation
