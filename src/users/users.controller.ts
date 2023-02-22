@@ -34,8 +34,8 @@ export class UsersController {
   }
 
   @Get(":id")
-  async getProduct(@Res() response, getToken: string, id: string) {
-    const productId = await this.apiService.getProduct(id, getToken);
+  async getProduct(@Res() response, id: string) {
+    const productId = await this.apiService.getProduct(id);
     return response.status(HttpStatus.OK).json({
       message: "Ok",
       productId,
