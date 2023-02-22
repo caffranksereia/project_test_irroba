@@ -14,14 +14,9 @@ export class UsersService {
     );
     return data;
   }
-  async getProduct(id): Promise<{getToken: string}> {
+  async getProduct(id) {
     const { data } = await this.service.axiosRef.get(
-      `https://api.irroba.com.br/v1/product/${id} `,
-      {
-        headers: {
-          "Authorization":  getToken,
-      }
-      }
+      `https://api.irroba.com.br/v1/product/${id} `
     );
     console.log(data);
     return data;
