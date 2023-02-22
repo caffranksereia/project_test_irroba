@@ -44,7 +44,7 @@ export class ProductService {
   }
 
   async findOne(id: string): Promise<Product> {
-    const existingProduct = this.productModel.findOne({ id: id }).exec();
+    const existingProduct = this.productModel.findOne({ _id: id }).exec();
 
     if (!existingProduct) {
       throw new NotFoundException(`Product #${id} not found`);
@@ -53,8 +53,9 @@ export class ProductService {
   }
 
   async delete(id: string) {
-    const deleteProduct = await this.productModel.findByIdAndRemove({
-        id: id,
+    const deleteProduct = await this.productModel
+      .findByIdAndRemove({
+        _id: id,
       })
       .exec();
 
